@@ -1,0 +1,55 @@
+{
+    "name": "@luna-park/plugin-boilerplate",
+    "version": "1.0.0",
+    "private": false,
+    "description": "Boilerplate plugin for Luna Park",
+    "keywords": [
+        "luna-park",
+        "plugin",
+        "boilerplate"
+    ],
+    "homepage": "https://luna-park.app",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lunapark/plugin-boilerplate"
+    },
+    "author": {
+        "name": "Luna Park",
+        "url": "https://luna-park.app"
+    },
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js"
+        }
+    },
+    "module": "./dist/index.js",
+    "files": [
+        "dist/**"
+    ],
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite build --watch",
+        "preview": "luna-preview"
+    },
+    "dependencies": {
+        "vue": "^3.5.24"
+    },
+    "devDependencies": {
+        "@luna-park/eslint-config": "^1.0.2",
+        "@luna-park/plugin": "^1.0.5",
+        "@types/node": "^24.10.1",
+        "@vitejs/plugin-vue": "^6.0.2",
+        "@vue/tsconfig": "^0.8.1",
+        "eslint": "^9.39.1",
+        "globals": "^16.5.0",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.47.0",
+        "vite": "^7.2.4",
+        "vite-plugin-css-injected-by-js": "^3.5.2",
+        "vue-tsc": "^3.1.4"
+    },
+    "peerDependencies": {
+        "vue": "^3.5.24"
+    }
+}
