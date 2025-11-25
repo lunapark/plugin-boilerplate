@@ -2,13 +2,15 @@
 import { LogicType, makeLogicNode } from "@luna-park/plugin";
 
 export const myFunctionNode = makeLogicNode({
-    display: {
-        name: "My Function Node"
-    },
+    name: "function-node",
     inputs: {
         in_exec: LogicType.exec(),
-        in_a: LogicType.number(),
-        in_b: LogicType.number()
+        in_a: LogicType.number({ name: "A" }),
+        in_b: LogicType.number({ name: "B" })
+    },
+    outputs: {
+        out_exec: LogicType.exec(),
+        out_result: LogicType.number({ name: "A+B" })
     },
     methods: {
         async in_exec() {
@@ -16,9 +18,7 @@ export const myFunctionNode = makeLogicNode({
             await this.out_exec();
         }
     },
-    name: "function-node",
-    outputs: {
-        out_exec: LogicType.exec(),
-        out_result: LogicType.number()
+    display: {
+        name: "My Function Node"
     }
 });
