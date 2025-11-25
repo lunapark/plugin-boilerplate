@@ -4,6 +4,8 @@ import { myComponent } from "@/components/myComponent.ts";
 import { myFunctionNode } from "@/nodes/myFunctionNode.ts";
 import { myOperationNode } from "@/nodes/myOperationNode.ts";
 import style from "@/style.css?inline";
+import { colorTokens } from "@/tokens/color.ts";
+import { lengthTokens } from "@/tokens/length.ts";
 
 import LWrapper from "./components/LWrapper.vue";
 import icon from "./logo.svg";
@@ -20,6 +22,10 @@ export default makePlugin({
         nodes: [
             myFunctionNode,
             myOperationNode
+        ],
+        tokens: [
+            ...colorTokens,
+            ...lengthTokens
         ],
         wrapper: LWrapper
     },
