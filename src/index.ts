@@ -27,7 +27,7 @@ export default makePlugin({
             ...colorTokens,
             ...lengthTokens
         ],
-        wrapper: LWrapper
+        wrapper: { component: LWrapper, name: "wrapper" }
     },
     icon,
     id: "boilerplate",
