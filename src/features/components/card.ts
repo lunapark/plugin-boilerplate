@@ -26,10 +26,11 @@ import { swatchType } from "@/features/inputs/index.ts";
 import { RUNTIME_TARGET } from "@/meta.ts";
 
 export const card = {
+    name: "Boilerplate/Card",
     build: {
+        name: "BpCard",
         // Named import: `import { BpCard } from "<package>/runtime"`. Use `default: true` for default exports.
-        imports: [{ from: RUNTIME_TARGET, name: "BpCard" }],
-        name: "BpCard"
+        imports: [{ name: "BpCard", from: RUNTIME_TARGET }]
     },
     component: BpCard,
     documentation: {
@@ -37,7 +38,6 @@ export const card = {
         link: "https://github.com/lunapark/plugin-boilerplate/tree/main/src/features/components"
     },
     icon: faSquare,
-    name: "Boilerplate/Card",
     properties: {
         // Edited with the plugin's custom swatch input (features/inputs)
         color: swatchType({ description: "Overrides the accent color.", optional: true }),

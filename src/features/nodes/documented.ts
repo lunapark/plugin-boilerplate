@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys-custom-order/object-keys */
 /**
  * NODE: display options and documentation.
  *
@@ -40,21 +39,21 @@ export const documentedNode = makeLogicNode({
         name: "Celsius to Fahrenheit",
         altSearch: "temperature convert degrees",
         config: {
+            back: faTemperatureThreeQuarters,
             hue: 20,
-            icon: faTemperatureHalf,
-            back: faTemperatureThreeQuarters
+            icon: faTemperatureHalf
         }
     },
     documentation: {
         short: "Convert a temperature from °C to °F",
         description: "Computes `°F = °C × 9/5 + 32`.",
-        parameters: [
-            { name: "in_celsius", description: "The temperature to convert, in degrees Celsius." },
-            { name: "out_fahrenheit", description: "The converted temperature, in degrees Fahrenheit." }
-        ],
         examples: [
             { inputs: [{ key: "in_celsius", value: 0 }], outputs: [{ key: "out_fahrenheit", value: 32 }] },
             { inputs: [{ key: "in_celsius", value: 100 }], outputs: [{ key: "out_fahrenheit", value: 212 }] }
+        ],
+        parameters: [
+            { name: "in_celsius", description: "The temperature to convert, in degrees Celsius." },
+            { name: "out_fahrenheit", description: "The converted temperature, in degrees Fahrenheit." }
         ]
     }
 });

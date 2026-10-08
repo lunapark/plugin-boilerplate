@@ -31,7 +31,7 @@ Register it in `editor.nodes`, either as an array or as a function of `env` that
 ## Conventions
 - Pin keys start with `in_` / `out_`. The compiler and the `this` proxy rely on this.
 - `name` is the stable id. Projects save nodes as `<pluginId>/<name>`, so renaming breaks them.
-- Each pin's `name` is its label. Pins are shown in declaration order. Files that care about the order disable the `sort-keys-custom-order` lint rule.
+- Each pin's `name` is its label. Pins are shown in declaration order. `eslint.config.js` keeps `inputs`, `outputs` and `methods` in source order and enforces the `makeLogicNode` key order (`name`, `inputs`, `outputs`, `config`, `methods`, `display`, `documentation`, `build`).
 
 ## Node kinds (picked automatically from `methods`)
 

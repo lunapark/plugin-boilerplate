@@ -29,13 +29,13 @@ const WRAPPER_NAME = "BpWrapper";
 export function getWrapper({ config, mode }: { config: TConfig; mode: "build" | "editor"; }): TWrapper {
     if (mode === "build") {
         return {
+            name: WRAPPER_NAME,
             attributes: { density: config.density },
-            component: BpWrapper,
-            name: WRAPPER_NAME
+            component: BpWrapper
         };
     }
 
-    return { component: BpWrapper, name: WRAPPER_NAME };
+    return { name: WRAPPER_NAME, component: BpWrapper };
 }
 
 /** Registers the wrapper globally in the generated `main.ts`, where `app` is in scope. */

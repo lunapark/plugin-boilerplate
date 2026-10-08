@@ -21,8 +21,8 @@ importers:
         specifier: ^1.3.0
         version: 1.3.0(@floating-ui/vue@1.1.11(vue@3.5.43(typescript@6.0.3)))(@fortawesome/fontawesome-svg-core@7.3.1)(@fortawesome/free-brands-svg-icons@7.3.1)(@fortawesome/vue-fontawesome@3.3.3(@fortawesome/fontawesome-svg-core@7.3.1)(vue@3.5.43(typescript@6.0.3)))(@luna-park/utils@2.0.0(jsep@1.4.0))(@material/web@2.5.0)(@vueuse/core@14.4.0(vue@3.5.43(typescript@6.0.3)))(pinia@3.0.4(typescript@6.0.3)(vue@3.5.43(typescript@6.0.3)))(symbol-db@1.0.2)(synth-color@1.1.5)(uuid@13.0.2)(vue@3.5.43(typescript@6.0.3))
       '@luna-park/eslint-config':
-        specifier: ^1.3.0
-        version: 1.3.0(677ef00ec5e5cd0c94445048820edde5)
+        specifier: ^1.4.2
+        version: 1.4.2(7058b52f5e71026b766021808467b243)
       '@luna-park/plugin':
         specifier: ^1.6.0
         version: 1.6.0
@@ -306,8 +306,8 @@ packages:
       uuid: ^13.0.0
       vue: ^3.5.28
 
-  '@luna-park/eslint-config@1.3.0':
-    resolution: {integrity: sha512-53bsgCsxDOOX6PeFbiGlHfWjQ8CwQ6HA8BKnXVJwJuFYRBulihDPD26vFumSjlkij+/p6jMtRyea5Puj/DiPjQ==}
+  '@luna-park/eslint-config@1.4.2':
+    resolution: {integrity: sha512-AuKdduTOIyOPV4AHw4soYPr2cuKTdGP1+LDS3u6gYKBnXFz4dn/pi2MmH3zbPZm0T/8vyPShkrKse7U6DgOAUA==}
     peerDependencies:
       '@eslint/js': ^10.0.1
       '@stylistic/eslint-plugin': ^5.10.0
@@ -318,7 +318,7 @@ packages:
       eslint-import-resolver-typescript: ^4.4.4
       eslint-plugin-import-x: ^4.16.2
       eslint-plugin-simple-import-sort: ^13.0.0
-      eslint-plugin-sort-keys-custom-order: ^3.0.2
+      eslint-plugin-sort-keys-custom-order: ^4.0.1
       eslint-plugin-vue: ^10.8.0
       globals: ^17.4.0
       jiti: ^2.6.1
@@ -979,8 +979,8 @@ packages:
     peerDependencies:
       eslint: '>=5.0.0'
 
-  eslint-plugin-sort-keys-custom-order@3.1.2:
-    resolution: {integrity: sha512-033nG2a+9bujRSi1BZWi+OMdcXxGJDZQXXOWvVP1UzkR1r4oAw61rYFt1gVOHYKtr0LeBUiMLmm3C85wKlME5g==}
+  eslint-plugin-sort-keys-custom-order@4.0.1:
+    resolution: {integrity: sha512-VJGaNVnTvQxj5XPR73x+3ylyYYDPD5ZaBX8ZfP7d8xPBULJkkfymF4vFZhADh6DuiK50HF/4JnIxZTBGpGWIUw==}
     peerDependencies:
       '@typescript-eslint/utils': ^8.0.0
       eslint: ^10.0.0
@@ -2141,7 +2141,7 @@ snapshots:
       uuid: 13.0.2
       vue: 3.5.43(typescript@6.0.3)
 
-  '@luna-park/eslint-config@1.3.0(677ef00ec5e5cd0c94445048820edde5)':
+  '@luna-park/eslint-config@1.4.2(7058b52f5e71026b766021808467b243)':
     dependencies:
       '@eslint/js': 10.0.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))
       '@stylistic/eslint-plugin': 5.10.0(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))
@@ -2152,7 +2152,7 @@ snapshots:
       eslint-import-resolver-typescript: 4.4.5(eslint-plugin-import-x@4.17.1(@typescript-eslint/utils@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)
       eslint-plugin-import-x: 4.17.1(@typescript-eslint/utils@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)
       eslint-plugin-simple-import-sort: 13.0.0(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))
-      eslint-plugin-sort-keys-custom-order: 3.1.2(@typescript-eslint/utils@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))
+      eslint-plugin-sort-keys-custom-order: 4.0.1(@typescript-eslint/utils@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))
       eslint-plugin-vue: 10.11.1(@stylistic/eslint-plugin@5.10.0(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2)))(@typescript-eslint/parser@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(vue-eslint-parser@10.4.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2))
       globals: 17.13.0
       jiti: 2.7.0
@@ -2761,7 +2761,7 @@ snapshots:
     dependencies:
       eslint: 10.12.0(jiti@2.7.0)(supports-color@10.2.2)
 
-  eslint-plugin-sort-keys-custom-order@3.1.2(@typescript-eslint/utils@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2)):
+  eslint-plugin-sort-keys-custom-order@4.0.1(@typescript-eslint/utils@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2)):
     dependencies:
       '@typescript-eslint/utils': 8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
       eslint: 10.12.0(jiti@2.7.0)(supports-color@10.2.2)

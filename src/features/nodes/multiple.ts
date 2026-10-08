@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys-custom-order/object-keys */
 /**
  * NODE: variadic input (`multiple: true`).
  *

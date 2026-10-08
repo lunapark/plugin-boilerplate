@@ -26,28 +26,28 @@ import { SERVER_TARGET } from "@/meta.ts";
 
 /** Guard without config. */
 const knownVisitorGuard: TRouteGuard = {
+    id: "known-visitor",
     build: {
         generate: () => `async (request) => assertKnownVisitor(request.context.${ VISITOR_CONTEXT_KEY })`,
         imports: [{ name: "assertKnownVisitor", target: SERVER_TARGET }]
     },
     check: ({ context }) => assertKnownVisitor(context[VISITOR_CONTEXT_KEY] as TVisitor),
     description: "Only visitors with the `bp_visitor` cookie can call this route.",
-    id: "known-visitor",
     label: "Known visitor"
 };
 
 /** Guard with a per-route config form. */
 const allowlistGuard: TRouteGuard = {
+    id: "visitor-allowlist",
     build: {
         generate: (config) => `async (request) => assertVisitorAllowed(request.context.${ VISITOR_CONTEXT_KEY }, ${ JSON.stringify(String(config.ids ?? "")) })`,
         imports: [{ name: "assertVisitorAllowed", target: SERVER_TARGET }]
     },
     check: ({ config, context }) => assertVisitorAllowed(context[VISITOR_CONTEXT_KEY] as TVisitor, String(config.ids ?? "")),
     config: LogicType.object({
-        ids: LogicType.string({ description: "Comma-separated visitor ids", name: "Allowed ids", placeholder: "alice, bob" })
+        ids: LogicType.string({ name: "Allowed ids", description: "Comma-separated visitor ids", placeholder: "alice, bob" })
     }),
     description: "Only the listed visitor ids can call this route.",
-    id: "visitor-allowlist",
     label: "Visitor allowlist"
 };
 

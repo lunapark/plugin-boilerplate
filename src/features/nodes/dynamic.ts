@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys-custom-order/object-keys */
 /**
  * NODES: dynamic pin types.
  *

@@ -50,7 +50,7 @@
     },
     "devDependencies": {
         "@luna-park/design": "^1.3.0",
-        "@luna-park/eslint-config": "^1.3.0",
+        "@luna-park/eslint-config": "^1.4.2",
         "@luna-park/plugin": "^1.6.0",
         "@types/node": "^26.6.4",
         "@vitejs/plugin-vue": "^6.0.9",

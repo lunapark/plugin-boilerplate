@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys-custom-order/object-keys */
 /**
  * NODE: operation node (pure data, no execution flow).
  *

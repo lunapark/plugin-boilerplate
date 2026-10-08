@@ -27,34 +27,34 @@ import { RUNTIME_TARGET } from "@/meta.ts";
 export const configSchema = LogicType.object({
     // `format: "color"` makes the editor show a colour picker
     accent: LogicType.string({
+        name: "Accent color",
         default: "#ff6600",
-        format: "color",
-        name: "Accent color"
+        format: "color"
     }),
     debug: LogicType.boolean({
+        name: "Debug",
         default: false,
-        description: "Log lifecycle events to the editor console.",
-        name: "Debug"
+        description: "Log lifecycle events to the editor console."
     }),
     /*
      * An enum given as an array shows a dropdown whose labels are the values. Given as a
      * Record<value, label> (like here), the label shown differs from the value stored.
      */
     density: LogicType.string({
+        name: "Density",
         default: "comfortable",
-        enum: { comfortable: "Comfortable", compact: "Compact" },
-        name: "Density"
+        enum: { comfortable: "Comfortable", compact: "Compact" }
     }),
     // Plain string with a default value
     greeting: LogicType.string({
+        name: "Greeting name",
         default: "Marty McFly",
-        description: "Name used by the greeting examples.",
-        name: "Greeting name"
+        description: "Name used by the greeting examples."
     }),
     // Numbers with min/max/step/clamp: the input becomes a slider-like field. `suffix` is display only.
     spacing: LogicType.number({
-        default: 8,
         name: "Base spacing",
+        default: 8,
         options: { clamp: true, max: 32, min: 0, step: 2, suffix: "px" }
     })
 });

@@ -25,9 +25,10 @@ const properties = {
 };
 
 export const list = {
+    name: "Boilerplate/List",
     build: {
-        imports: [{ from: RUNTIME_TARGET, name: "BpList" }],
-        name: "BpList"
+        name: "BpList",
+        imports: [{ name: "BpList", from: RUNTIME_TARGET }]
     },
     component: BpList,
     documentation: {
@@ -35,7 +36,6 @@ export const list = {
     },
     icon: faList,
     llm,
-    name: "Boilerplate/List",
     properties,
     // The argument is loosely typed (`Record<string, { schema, value }>`), so read props defensively
     slots: ({ showEmpty }) => ({

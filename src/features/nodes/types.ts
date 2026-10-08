@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys-custom-order/object-keys */
 /**
  * NODE: tour of the data types (`LogicType.*`).
  *
@@ -15,15 +14,15 @@ import { LogicType, LogicUtil, makeLogicNode } from "@luna-park/plugin";
 
 /** A reusable object schema. `name` on each property is the label shown in the editor. */
 export const profileSchema = LogicType.object({
-    name: LogicType.string({ name: "name" }),
-    age: LogicType.number({ name: "age", optional: true }),
-    tags: LogicType.array(LogicType.string(), { name: "tags" }),
-    // Record<string, number>
-    scores: LogicType.record(LogicType.string(), LogicType.number(), { name: "scores" }),
     // string | number
     id: LogicType.union([LogicType.string(), LogicType.number()], { name: "id" }),
+    name: LogicType.string({ name: "name" }),
+    age: LogicType.number({ name: "age", optional: true }),
     // Interfaces are named class types ("Date" is built in, see features/interfaces for custom ones)
-    createdAt: LogicType.interface<Date>("Date", { name: "created at" })
+    createdAt: LogicType.interface<Date>("Date", { name: "created at" }),
+    // Record<string, number>
+    scores: LogicType.record(LogicType.string(), LogicType.number(), { name: "scores" }),
+    tags: LogicType.array(LogicType.string(), { name: "tags" })
 }, { name: "profile" });
 
 /** `Static` gives the TypeScript type: `{ name: string; age?: number; tags: string[]; ... }`. */
@@ -48,12 +47,12 @@ export const typesNode = makeLogicNode({
     methods: {
         out_profile() {
             return {
+                id: this.in_name.toLowerCase(),
                 name: this.in_name,
                 age: this.in_age,
-                tags: this.in_tags ?? [],
+                createdAt: new Date(),
                 scores: {},
-                id: this.in_name.toLowerCase(),
-                createdAt: new Date()
+                tags: this.in_tags ?? []
             } satisfies TProfile;
         },
         out_summary() {

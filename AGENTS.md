@@ -83,7 +83,6 @@ Generated-app modules:
 ## Minimal templates
 **Node**
 ```ts
-/* eslint-disable sort-keys-custom-order/object-keys */
 export const myNode = makeLogicNode({
     name: "category/my-node",
     inputs: { in_exec: LogicType.exec(), in_value: LogicType.string({ name: "value" }) },

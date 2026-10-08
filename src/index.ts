@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys-custom-order/object-keys */
 /**
  * Plugin entry point: the module the Luna Park editor loads.
  *
@@ -123,9 +122,9 @@ export default makePlugin<typeof configSchema, TInternals>({
 
     // ─── Build (code generation of the exported app) ─────────────────────────────────────────
     build: {
-        frontImports: [packageImport],
         backImports: [packageImport],
         env: getEnv,
+        frontImports: [packageImport],
         injections: (env) => mergeInjections(
             getConfigInjections(env.config),
             getWrapperInjections(),

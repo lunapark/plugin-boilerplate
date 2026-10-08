@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys-custom-order/object-keys */
 /**
  * FEATURE: custom interfaces (`editor.interfaces`), i.e. class types.
  *
@@ -30,20 +29,20 @@ import { SHARED_TARGET } from "@/meta.ts";
 export const moneyInterface: TInterface = {
     name: "Money",
     class: Money as unknown as TInterface["class"],
+    constant: {
+        build: {
+            generate: (code) => `Money.parse(${ code })`,
+            imports: [{ name: "Money", target: SHARED_TARGET }]
+        },
+        editor: markRaw(LMoneyInput),
+        parse: (value) => Money.parse(String(value)),
+        serialize: (instance) => String(instance)
+    },
     description: "An amount of money in a given currency (e.g. `12.50 EUR`).",
     methods: [
         { name: "format", parameters: [LogicType.string({ name: "locale", optional: true })], return: LogicType.string() },
         { name: "add", parameters: [LogicType.interface("Money", { name: "other" })], return: LogicType.interface("Money") }
-    ],
-    constant: {
-        editor: markRaw(LMoneyInput),
-        parse: (value) => Money.parse(String(value)),
-        serialize: (instance) => String(instance),
-        build: {
-            generate: (code) => `Money.parse(${ code })`,
-            imports: [{ name: "Money", target: SHARED_TARGET }]
-        }
-    }
+    ]
 };
 
 export const interfaces: Array<TInterface> = [moneyInterface];

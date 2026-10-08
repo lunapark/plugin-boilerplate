@@ -41,18 +41,16 @@ function getStoreFile() {
 
 function getNotesFile() {
     return {
-        data: [
-            { archived: false, id: crypto.randomUUID(), title: "Great Scott!" },
-            { archived: true, id: crypto.randomUUID(), title: "Hidden by the DatabaseScope hook" }
-        ],
         name: "Boilerplate Notes",
+        data: [
+            { id: crypto.randomUUID(), archived: false, title: "Great Scott!" },
+            { id: crypto.randomUUID(), archived: true, title: "Hidden by the DatabaseScope hook" }
+        ],
         schema: LogicType.object({
             // Property order is column order, so keep it meaningful rather than alphabetical
-            /* eslint-disable sort-keys-custom-order/object-keys */
             id: LogicType.string({ name: "id", options: { freeze: true, readonly: true } }),
             title: LogicType.string({ name: "title", options: { freeze: true } }),
             archived: LogicType.boolean({ name: "archived", options: { freeze: true } })
-            /* eslint-enable sort-keys-custom-order/object-keys */
         }, { options: { freeze: true, insert: -1 } }),
         type: EElementType.Database
     } satisfies Partial<TFileDatabase<true>>;
@@ -82,23 +80,13 @@ function getStore() {
  * is read from `internals` when the node runs or generates code, never captured earlier.
  */
 export const saveGreetingNode = makeLogicNode({
-    build: {
-        generate: () => `function () {
-            [[file:${ internals.files.store }]].value.lastGreeting = this.in_text;
-            [[file:${ internals.files.store }]].value.count = ([[file:${ internals.files.store }]].value.count ?? 0) + 1;
-            return this.out_exec();
-        }`
-    },
-    display: {
-        name: "Save greeting (store file)"
-    },
-    documentation: {
-        description: "Example of a node using a project file created by the plugin. In generated code, `[[file:<id>]]` becomes an import of the store.",
-        short: "Write a greeting into the Boilerplate Store"
-    },
+    name: "files/save-greeting",
     inputs: {
         in_exec: LogicType.exec(),
         in_text: LogicType.string({ name: "text" })
+    },
+    outputs: {
+        out_exec: LogicType.exec()
     },
     methods: {
         in_exec() {
@@ -112,8 +100,18 @@ export const saveGreetingNode = makeLogicNode({
             return this.out_exec();
         }
     },
-    name: "files/save-greeting",
-    outputs: {
-        out_exec: LogicType.exec()
+    display: {
+        name: "Save greeting (store file)"
+    },
+    documentation: {
+        short: "Write a greeting into the Boilerplate Store",
+        description: "Example of a node using a project file created by the plugin. In generated code, `[[file:<id>]]` becomes an import of the store."
+    },
+    build: {
+        generate: () => `function () {
+            [[file:${ internals.files.store }]].value.lastGreeting = this.in_text;
+            [[file:${ internals.files.store }]].value.count = ([[file:${ internals.files.store }]].value.count ?? 0) + 1;
+            return this.out_exec();
+        }`
     }
 });

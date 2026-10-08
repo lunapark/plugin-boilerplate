@@ -34,14 +34,14 @@ export default defineConfig(() => {
     const config: UserConfig = {
         build: {
             lib: {
+                name: packageDefinition.name,
                 entry: {
                     index: "src/index.ts",
                     runtime: "src/entries/runtime.ts",
                     server: "src/entries/server.ts",
                     shared: "src/entries/shared.ts"
                 },
-                formats: ["es"],
-                name: packageDefinition.name
+                formats: ["es"]
             },
             rolldownOptions: {
                 /*

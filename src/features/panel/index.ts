@@ -28,6 +28,7 @@ import { flashElements, vHighlight } from "@/features/panel/runtime.ts";
 import { RUNTIME_TARGET } from "@/meta.ts";
 
 export const highlightPanel: TElementPanel = {
+    id: "highlight",
     actions: [{
         icon: faBolt,
         onClick: ({ getElements }) => flashElements(getElements()),
@@ -35,26 +36,25 @@ export const highlightPanel: TElementPanel = {
     }],
     component: markRaw(LHighlightPanel),
     directive: {
-        build: { from: RUNTIME_TARGET, name: "vHighlight" },
+        build: { name: "vHighlight", from: RUNTIME_TARGET },
         value: vHighlight
     },
     // Don't offer the panel on slot placeholders
     filter: (schema) => schema.element !== "slot",
     icon: faHighlighter,
-    id: "highlight",
     label: "Highlight",
     properties: {
-        color: LogicType.string({ format: "color", name: "Color", optional: true }),
+        color: LogicType.string({ name: "Color", format: "color", optional: true }),
         // Edited only by the custom component
-        intensity: LogicType.number({ default: 2, name: "Intensity", options: { hidden: true } }),
+        intensity: LogicType.number({ name: "Intensity", default: 2, options: { hidden: true } }),
         pulse: LogicType.boolean({
-            default: false,
             name: "Pulse",
+            default: false,
             optional: true,
             // Conditional visibility: only shown for the "glow" style
             options: { hidden: (values: THighlightOptions) => values.style !== "glow" }
         }),
-        style: LogicType.string({ default: "outline", enum: { glow: "Glow", outline: "Outline" }, name: "Style" })
+        style: LogicType.string({ name: "Style", default: "outline", enum: { glow: "Glow", outline: "Outline" } })
     }
 };
 

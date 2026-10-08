@@ -3,3 +3,5 @@ allowBuilds:
   vue-demi: true
 minimumReleaseAgeExclude:
   - '@luna-park/plugin@1.6.0'
+  - '@luna-park/eslint-config@1.4.0 || 1.4.1 || 1.4.2'
+  - eslint-plugin-sort-keys-custom-order@4.0.0 || 4.0.1

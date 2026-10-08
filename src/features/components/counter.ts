@@ -17,9 +17,10 @@ import BpCounter from "@/features/components/BpCounter.vue";
 import { RUNTIME_TARGET } from "@/meta.ts";
 
 export const counter = {
+    name: "Boilerplate/Counter",
     build: {
-        imports: [{ from: RUNTIME_TARGET, name: "BpCounter" }],
-        name: "BpCounter"
+        name: "BpCounter",
+        imports: [{ name: "BpCounter", from: RUNTIME_TARGET }]
     },
     component: BpCounter,
     documentation: {
@@ -33,7 +34,6 @@ export const counter = {
     models: {
         modelValue: LogicType.number({ name: "value" })
     },
-    name: "Boilerplate/Counter",
     properties: {
         step: LogicType.number({ default: 1, options: { min: 1, step: 1 } })
     }

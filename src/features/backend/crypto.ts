@@ -6,7 +6,7 @@
  */
 export async function signText(secret: string, text: string) {
     const encoder = new TextEncoder();
-    const key = await crypto.subtle.importKey("raw", encoder.encode(secret || "missing-secret"), { hash: "SHA-256", name: "HMAC" }, false, ["sign"]);
+    const key = await crypto.subtle.importKey("raw", encoder.encode(secret || "missing-secret"), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
     const signature = await crypto.subtle.sign("HMAC", key, encoder.encode(text));
 
     return [...new Uint8Array(signature)].map((byte) => byte.toString(16).padStart(2, "0")).join("");

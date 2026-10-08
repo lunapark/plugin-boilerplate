@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys-custom-order/object-keys */
 /**
  * NODES: backend node + frontend node calling an injected backend route.
  *
