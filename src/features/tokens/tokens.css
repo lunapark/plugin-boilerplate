@@ -1,0 +1,41 @@
+/*
+ * Global CSS of the plugin, injected with `inject.css` (see ./index.ts):
+ * - in the editor: added to the page, so the canvas preview gets it;
+ * - in exported apps: appended to the generated `src/style.css`.
+ *
+ * It defines the CSS variables that the tokens and components use. Prefix every name (`--bp-`)
+ * so it can't collide with the app or with other plugins.
+ */
+:root {
+    /* Colors */
+    --bp-color-accent: #ff6600;
+    --bp-color-ink: #1a1a2e;
+
+    /* Lengths */
+    --bp-spacing: 8px;
+    --bp-length-s: 4px;
+    --bp-length-m: 8px;
+    --bp-length-l: 16px;
+    --bp-radius: 8px;
+
+    /* Typography */
+    --bp-font-size-s: 12px;
+    --bp-font-size-l: 20px;
+    --bp-font-weight-bold: 700;
+    --bp-font-family-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+    /* Motion */
+    --bp-time-fast: 150ms;
+    --bp-time-slow: 400ms;
+}
+
+/* Used by the `v-highlight` directive (features/panel) */
+@keyframes bp-highlight-pulse {
+    from {
+        filter: brightness(1);
+    }
+
+    to {
+        filter: brightness(1.4);
+    }
+}

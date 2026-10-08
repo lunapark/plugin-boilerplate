@@ -1,0 +1,87 @@
+{
+    "name": "Boilerplate demo",
+    "type": "folder",
+    "state": {
+        "expand": true
+    },
+    "children": {
+        "3f6c1c11": {
+            "name": "Demo Card",
+            "type": "component",
+            "layout": {
+                "id": "3f6c1c12",
+                "name": "",
+                "children": [
+                    {
+                        "id": "3f6c1c13",
+                        "name": "",
+                        "children": [],
+                        "classes": [],
+                        "content": {
+                            "text": {
+                                "content": "Roads? Where we're going, we don't need roads.",
+                                "key": "root"
+                            },
+                            "variables": []
+                        },
+                        "element": "customText",
+                        "events": [],
+                        "properties": {},
+                        "style": {},
+                        "tag": "div"
+                    }
+                ],
+                "classes": [],
+                "content": {
+                    "slot": true,
+                    "slots": {},
+                    "target": "boilerplate>Boilerplate/Card"
+                },
+                "element": "plugin/boilerplate",
+                "events": [],
+                "properties": {
+                    "title": "Hello from the Boilerplate plugin",
+                    "variant": "soft"
+                },
+                "style": {},
+                "tag": "template"
+            },
+            "logics": {
+                "main": {
+                    "name": "Main",
+                    "type": "main",
+                    "graph": {
+                        "canvas": {
+                            "location": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "zoom": 0
+                        },
+                        "nodes": {},
+                        "wires": {}
+                    },
+                    "values": {
+                        "variables": {}
+                    }
+                }
+            },
+            "options": {
+                "type": "component",
+                "path": "",
+                "preview": "stretch",
+                "previewSize": "auto"
+            },
+            "state": {
+                "expand": true,
+                "panel": "preview"
+            },
+            "values": {
+                "computed": {},
+                "events": {},
+                "properties": {},
+                "variables": {}
+            }
+        }
+    }
+}

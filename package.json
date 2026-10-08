@@ -2,7 +2,7 @@
     "name": "@luna-park/plugin-boilerplate",
     "version": "1.0.0",
     "private": false,
-    "description": "Boilerplate plugin for Luna Park",
+    "description": "Boilerplate plugin for Luna Park: a documented example of every plugin feature",
     "keywords": [
         "luna-park",
         "plugin",
@@ -21,6 +21,15 @@
     "exports": {
         ".": {
             "import": "./dist/index.js"
+        },
+        "./runtime": {
+            "import": "./dist/runtime.js"
+        },
+        "./server": {
+            "import": "./dist/server.js"
+        },
+        "./shared": {
+            "import": "./dist/shared.js"
         }
     },
     "module": "./dist/index.js",
@@ -30,12 +39,17 @@
     "scripts": {
         "build": "vite build",
         "dev": "vite build --watch",
-        "preview": "luna-preview"
+        "preview": "luna-preview",
+        "typecheck": "vue-tsc -b",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix"
     },
     "dependencies": {
+        "@fortawesome/free-solid-svg-icons": "^7.1.0",
         "vue": "^3.5.43"
     },
     "devDependencies": {
+        "@luna-park/design": "^1.3.0",
         "@luna-park/eslint-config": "^1.3.0",
         "@luna-park/plugin": "^1.6.0",
         "@types/node": "^26.6.4",
@@ -50,6 +64,7 @@
         "vue-tsc": "^3.3.12"
     },
     "peerDependencies": {
+        "@luna-park/design": "^1.3.0",
         "vue": "^3.5.43"
     }
 }

@@ -1,4 +1,5 @@
 allowBuilds:
   unrs-resolver: true
+  vue-demi: true
 minimumReleaseAgeExclude:
   - '@luna-park/plugin@1.6.0'
