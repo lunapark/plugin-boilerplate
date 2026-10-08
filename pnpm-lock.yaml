@@ -21,11 +21,11 @@ importers:
         specifier: ^1.3.0
         version: 1.3.0(@floating-ui/vue@1.1.11(vue@3.5.43(typescript@6.0.3)))(@fortawesome/fontawesome-svg-core@7.3.1)(@fortawesome/free-brands-svg-icons@7.3.1)(@fortawesome/vue-fontawesome@3.3.3(@fortawesome/fontawesome-svg-core@7.3.1)(vue@3.5.43(typescript@6.0.3)))(@luna-park/utils@2.0.0(jsep@1.4.0))(@material/web@2.5.0)(@vueuse/core@14.4.0(vue@3.5.43(typescript@6.0.3)))(pinia@3.0.4(typescript@6.0.3)(vue@3.5.43(typescript@6.0.3)))(symbol-db@1.0.2)(synth-color@1.1.5)(uuid@13.0.2)(vue@3.5.43(typescript@6.0.3))
       '@luna-park/eslint-config':
-        specifier: ^1.4.2
-        version: 1.4.2(7058b52f5e71026b766021808467b243)
+        specifier: ^1.4.3
+        version: 1.4.3(6e85afe6579b4610b402aeddecd836bd)
       '@luna-park/plugin':
-        specifier: ^1.6.0
-        version: 1.6.0
+        specifier: ^1.7.0
+        version: 1.7.0
       '@types/node':
         specifier: ^26.6.4
         version: 26.6.4
@@ -306,8 +306,8 @@ packages:
       uuid: ^13.0.0
       vue: ^3.5.28
 
-  '@luna-park/eslint-config@1.4.2':
-    resolution: {integrity: sha512-AuKdduTOIyOPV4AHw4soYPr2cuKTdGP1+LDS3u6gYKBnXFz4dn/pi2MmH3zbPZm0T/8vyPShkrKse7U6DgOAUA==}
+  '@luna-park/eslint-config@1.4.3':
+    resolution: {integrity: sha512-RMTW0vrOgRyqyF+hMgGBe7Me3noABWD1F+/fSkTHoG1HvgzclUraCf1shfJnwgvrztXYXN8+CcX1HOPKG3xnEA==}
     peerDependencies:
       '@eslint/js': ^10.0.1
       '@stylistic/eslint-plugin': ^5.10.0
@@ -318,15 +318,15 @@ packages:
       eslint-import-resolver-typescript: ^4.4.4
       eslint-plugin-import-x: ^4.16.2
       eslint-plugin-simple-import-sort: ^13.0.0
-      eslint-plugin-sort-keys-custom-order: ^4.0.1
+      eslint-plugin-sort-keys-custom-order: ^4.1.0
       eslint-plugin-vue: ^10.8.0
       globals: ^17.4.0
       jiti: ^2.6.1
       stylelint: ^17.6.0
       typescript-eslint: ^8.58.0
 
-  '@luna-park/plugin@1.6.0':
-    resolution: {integrity: sha512-USP5BJ6LfhNu8qlXorzAlarNb1xR5+sk8Di8fltOdCUPh6ZF8kuD5WOWYau254r1UQez+zV17MFirfT5mC75bQ==}
+  '@luna-park/plugin@1.7.0':
+    resolution: {integrity: sha512-+j42Gqi3QSPvxmoJRG3xRmZ4OkzkpzLS3AgEfVpiI1NZNnBNXe/pJTNwxJXVIAR333l8KTW3TKwzbWE3t9TKBQ==}
     hasBin: true
 
   '@luna-park/utils@2.0.0':
@@ -979,8 +979,8 @@ packages:
     peerDependencies:
       eslint: '>=5.0.0'
 
-  eslint-plugin-sort-keys-custom-order@4.0.1:
-    resolution: {integrity: sha512-VJGaNVnTvQxj5XPR73x+3ylyYYDPD5ZaBX8ZfP7d8xPBULJkkfymF4vFZhADh6DuiK50HF/4JnIxZTBGpGWIUw==}
+  eslint-plugin-sort-keys-custom-order@4.1.0:
+    resolution: {integrity: sha512-PCBW/h/bPqRlNMUWaOAvjWU7bHMPy6L0PCb/62EYoFbKZ6F5LdTPZDh2sOHyVUxVZlVaSglWOPz5bmqND74BCQ==}
     peerDependencies:
       '@typescript-eslint/utils': ^8.0.0
       eslint: ^10.0.0
@@ -2141,7 +2141,7 @@ snapshots:
       uuid: 13.0.2
       vue: 3.5.43(typescript@6.0.3)
 
-  '@luna-park/eslint-config@1.4.2(7058b52f5e71026b766021808467b243)':
+  '@luna-park/eslint-config@1.4.3(6e85afe6579b4610b402aeddecd836bd)':
     dependencies:
       '@eslint/js': 10.0.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))
       '@stylistic/eslint-plugin': 5.10.0(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))
@@ -2152,14 +2152,14 @@ snapshots:
       eslint-import-resolver-typescript: 4.4.5(eslint-plugin-import-x@4.17.1(@typescript-eslint/utils@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)
       eslint-plugin-import-x: 4.17.1(@typescript-eslint/utils@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)
       eslint-plugin-simple-import-sort: 13.0.0(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))
-      eslint-plugin-sort-keys-custom-order: 4.0.1(@typescript-eslint/utils@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))
+      eslint-plugin-sort-keys-custom-order: 4.1.0(@typescript-eslint/utils@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))
       eslint-plugin-vue: 10.11.1(@stylistic/eslint-plugin@5.10.0(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2)))(@typescript-eslint/parser@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(vue-eslint-parser@10.4.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2))
       globals: 17.13.0
       jiti: 2.7.0
       stylelint: 17.16.0(supports-color@10.2.2)(typescript@6.0.3)
       typescript-eslint: 8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
 
-  '@luna-park/plugin@1.6.0':
+  '@luna-park/plugin@1.7.0':
     dependencies:
       '@electric-sql/pglite': 0.5.8
       '@fastify/cors': 11.3.0
@@ -2761,7 +2761,7 @@ snapshots:
     dependencies:
       eslint: 10.12.0(jiti@2.7.0)(supports-color@10.2.2)
 
-  eslint-plugin-sort-keys-custom-order@4.0.1(@typescript-eslint/utils@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2)):
+  eslint-plugin-sort-keys-custom-order@4.1.0(@typescript-eslint/utils@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2)):
     dependencies:
       '@typescript-eslint/utils': 8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
       eslint: 10.12.0(jiti@2.7.0)(supports-color@10.2.2)
