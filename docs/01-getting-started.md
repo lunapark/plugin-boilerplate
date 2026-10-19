@@ -19,7 +19,6 @@ A plugin can add:
 ```bash
 pnpm install
 ```
-`.pnpmfile.cjs` removes the Font Awesome *Pro* peer dependencies of `@luna-park/design`, so the install works without a Pro licence.
 
 ## Scripts
 

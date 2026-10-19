@@ -78,7 +78,7 @@ Injection points:
 
 Generated-app modules:
 - **Frontend:** `@/utils/api` (`route`), `@/utils/lib.ts` (`useInstances`).
-- **Backend:** `@/database/index.js` (`dbFind`, `dbInsert`, `dbUpdate`, `dbDelete`, `addDbScope`, `onDbChange`), `@/context.js` (`getRequestContext`).
+- **Backend:** `@/database/index.js` (`dbFind`, `dbInsert`, `dbUpdate`, `dbDelete`, `dbTransaction`, `addDbScope`, `onDbChange`, `onCommit`, `onRollback`, `getExecutor`), `@/context.js` (`getRequestContext`).
 
 ## Minimal templates
 **Node**

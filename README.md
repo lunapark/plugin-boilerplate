@@ -52,7 +52,6 @@ src/
   features/<name>/    one self-contained feature per folder (+ README.md)
 docs/                 01 … 14 guides
 vite.config.ts        multi-entry library build
-.pnpmfile.cjs         makes @luna-park/design installable without Font Awesome Pro
 ```
 
 ## Guides

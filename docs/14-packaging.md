@@ -38,7 +38,7 @@ Remove the entries you don't need from all three.
 Global CSS for the app goes through `inject.css` ([06](06-styling-and-tokens.md)).
 
 ## Font Awesome
-- `@luna-park/design` declares Font Awesome **Pro** peers. `.pnpmfile.cjs` removes them so the install works without a licence.
+- `@luna-park/design` only depends on the free Font Awesome packages, so no licence is needed to install it.
 - The boilerplate uses `@fortawesome/free-solid-svg-icons`, bundled as plain icon definitions. With a Pro licence you can switch to `@fortawesome/pro-*` like the official plugins.
 
 ## Generating component definitions (`@luna-park/plugin/extractor`)
