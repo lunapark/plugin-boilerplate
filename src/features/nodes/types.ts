@@ -36,7 +36,7 @@ export const typesNode = makeLogicNode({
     inputs: {
         in_name: LogicType.string({ name: "name", placeholder: "Doc Brown" }),
         in_age: LogicType.number({ name: "age", optional: true }),
-        in_tags: LogicType.array(LogicType.string(), { name: "tags", default: () => [] })
+        in_tags: LogicType.array(LogicType.string(), { name: "tags", default: [] })
     },
     outputs: {
         out_profile: profileSchema,

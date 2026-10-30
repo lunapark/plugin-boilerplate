@@ -9,7 +9,7 @@ const file = env.addFile({ name: "My Store", type: EElementType.Store, schema: �
 internals.files.store = file.id;          // saved with the project
 const live = env.getFile(file.id);        // live file: Store → .value (reactive), Database → .db
 ```
-- `addFile` takes the **export shape** of a file (`Partial<TFileStore<true>>`, `Partial<TFileDatabase<true>>`, …). Type it with `satisfies`.
+- `addFile` takes the **export shape** of a file (`Partial<TFileStoreExport>`, `Partial<TFileDatabaseExport>`, …). Type it with `satisfies`.
 - Provisioning must be idempotent: create the file only when the stored id is missing or `getFile(id)` returns nothing.
 - `addFile` and `getFile` only exist in the editor.
 
@@ -38,6 +38,6 @@ Example: [`src/features/templates/`](../src/features/templates)
 ```ts
 templates: [{ name: "Landing", preview: previewPng, template: landingJson as unknown as TTemplate["template"] }]
 ```
-- `template` is a folder in **export format** (`TFile<true>`). Build it in the editor, export it, and save the JSON.
+- `template` is a folder in **export format** (`TFolderExport`). Build it in the editor, export it, and save the JSON.
 - It can use your components (`"element": "plugin/<pluginId>"`, `"content": { "target": "<pluginId>><Component/Name>" }`) and tokens (`"token": "plugin/<pluginId>/<id>"`).
 - `preview` is an image URL. Imported PNG or SVG files become URLs or data URIs through Vite.

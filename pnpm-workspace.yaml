@@ -2,6 +2,5 @@ allowBuilds:
   unrs-resolver: true
   vue-demi: true
 minimumReleaseAgeExclude:
-  - '@luna-park/plugin@1.6.0 || 1.7.0'
-  - '@luna-park/eslint-config@1.4.0 || 1.4.1 || 1.4.2 || 1.4.3'
+  - '@luna-park/*'
   - eslint-plugin-sort-keys-custom-order@4.0.0 || 4.0.1 || 4.1.0

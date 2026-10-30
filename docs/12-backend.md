@@ -82,12 +82,12 @@ const guard: TRouteGuard = {
 
 `table` is the **database file id** (keep it in `internals` when your plugin created the database).
 
-Condition shape (`TDatabaseCondition`):
+Condition shape (`TDBCondition | TDBOperation`, enums `EDBCondition` and `EDBOperation`):
 ```ts
-{ type: "value", operation: "equals", source: ["column"], target: value }
-{ type: "column", operation: "equals", source: ["a"], target: ["b"] }
-{ type: "and" | "or", conditions: [ … ] }
-// operations: equals, notEquals, greaterThan, lessThan, greaterThanOrEquals, lessThanOrEquals, in, isNull, like, ilike, contains
+{ type: "value", operation: EDBCondition.Equals, source: ["column"], target: value }
+{ type: "column", operation: EDBCondition.Equals, source: ["a"], target: ["b"] }
+{ type: EDBOperation.And | EDBOperation.Or, conditions: [ … ] }
+// EDBCondition: Equals, NotEquals, GreaterThan, LessThan, GreaterThanOrEquals, LessThanOrEquals, In, IsNull, NotNull, Like, ILike, Contains
 ```
 
 **Always add the production mirror.** Otherwise the deployed app behaves differently from the editor.

@@ -15,7 +15,7 @@ if (!internals.files.store || !env.getFile(internals.files.store)) {
 ```
 - The id is saved with the project through `internals`.
 - If the user deletes the file, the next mount recreates it.
-- `addFile(file, parentId?)` takes the export shape of a file (`Partial<TFileStore<true>>`, …) and returns the live file with its `id`.
+- `addFile(file, parentId?)` takes the export shape of a file (`Partial<TFileStoreExport>`, …) and returns the live file with its `id`.
 - `addFile` / `getFile` only exist in the editor. They are undefined while the app is compiled.
 
 ## Referencing a file in generated code

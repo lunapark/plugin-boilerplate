@@ -95,6 +95,6 @@ Interfaces are **not** namespaced: their `name` is global.
 - `makeComponent(c)`: identity helper for `TComponent`. `satisfies TComponent` works too.
 - `loadPlugin(plugin, env)` and `getPluginParam(option, env)`: resolve `TOption` values, as the compiler does.
 - `LSettingsStoryWrapper`: Histoire wrapper sized like the settings popup.
-- Enums: `EInjectionKey`, `EPluginHooks`, `ETokenType`, `ELogicScope`, `ELogicType`, `EVarType`, `EElementType`.
-- Types: `TPlugin`, `TBasePlugin`, `TEnv`, `TComponent`, `TSlot`, `TElementPanel(Props|Action)`, `TPanels`, `TRouteGuard`, `THookParams`, `TDatabaseCondition`, `TInterface`, `TInterfaceEditorProps`, `TTemplate`, `TToken`, `TFile*`, `TApplication`, `TLayoutSchema`, `TSchema`, `TLogicNode`.
+- Enums: `EInjectionKey`, `EPluginHooks`, `ETokenType`, `ELogicScope`, `ELogicType`, `EVarType`, `EElementType`, `EDBCondition`, `EDBOperation`.
+- Types: `TPlugin`, `TBasePlugin`, `TEnv`, `TComponent`, `TSlot`, `TElementPanel(Props|Action)`, `TPanels`, `TRouteGuard`, `THookParams`, `TDBCondition`, `TDBOperation`, `TInterface`, `TInterfaceEditorProps`, `TTemplate`, `TToken`, `TFile*` and `TFile*Export`, `TApplication`, `TApplicationExport`, `TLayoutSchema`, `TSchema`, `TLogicNode`.
 - `@luna-park/plugin/extractor`: generate `TComponent`s from `.vue` / `.d.ts` files (see [14](14-packaging.md)).

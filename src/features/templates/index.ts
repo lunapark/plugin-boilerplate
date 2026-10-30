@@ -5,7 +5,7 @@
  * add from the editor's templates window. Each one has:
  * - `name`: title in the templates window;
  * - `preview`: image URL. Imported image files become data URIs or URLs through Vite;
- * - `template`: the folder in **export format** (`TFile<true>`, without runtime ids).
+ * - `template`: the folder in **export format** (`TFolderExport`, without runtime ids).
  *
  * The easiest way to get the JSON is to build the folder in the editor and export it. Templates
  * can use your plugin's components (`"element": "plugin/<pluginId>"`,

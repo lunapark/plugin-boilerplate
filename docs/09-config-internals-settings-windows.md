@@ -12,7 +12,7 @@ const configSchema = LogicType.object({
 makePlugin<typeof configSchema, TInternals>({ config: configSchema, … });
 ```
 - The form opens from the plugin's button in the editor header.
-- Defaults come from the schema (`getSchemaDefault`) at install time.
+- Defaults come from the schema (`getSchemaDefault`). They are saved at install time and filled in for missing keys when options resolve, so new config fields work in older projects.
 - Values are stored at `app.config.plugins[id].config`.
 - Available as a typed `env.config` in `lifecycle.*` and in every `editor` / `build` / `inject` option function.
 - Each change triggers `lifecycle.update`, and the option functions run again.

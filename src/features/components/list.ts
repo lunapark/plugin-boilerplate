@@ -20,7 +20,7 @@ import llm from "@/features/components/list.md?raw";
 import { RUNTIME_TARGET } from "@/meta.ts";
 
 const properties = {
-    items: LogicType.array(LogicType.string(), { default: () => ["Flux capacitor", "DeLorean"] }),
+    items: LogicType.array(LogicType.string(), { default: ["Flux capacitor", "DeLorean"] }),
     showEmpty: LogicType.boolean({ default: true, description: "Show the `empty` slot when there are no items." })
 };
 

@@ -19,8 +19,8 @@
  *
  * Docs: docs/12-backend.md
  */
-import type { THookParams, TPlugin } from "@luna-park/plugin";
-import { EInjectionKey, EPluginHooks, LogicType } from "@luna-park/plugin";
+import type { TDBCondition, THookParams, TPlugin } from "@luna-park/plugin";
+import { EDBCondition, EInjectionKey, EPluginHooks, LogicType } from "@luna-park/plugin";
 
 import { resolveVisitor, VISITOR_CONTEXT_KEY, VISITOR_COOKIE } from "@/features/hooks/visitor.ts";
 import type { TInternals } from "@/features/internals/internals.ts";
@@ -36,7 +36,7 @@ export const visitorSchema = LogicType.object({
 }, { name: "visitor" });
 
 /** Condition hiding archived notes. The same shape is used by the editor and the generated backend. */
-const notArchivedCondition = { operation: "equals", source: ["archived"], target: false, type: "value" as const };
+const notArchivedCondition: TDBCondition = { operation: EDBCondition.Equals, source: ["archived"], target: false, type: "value" };
 
 export const hooks: NonNullable<TPlugin["hooks"]> = {
     [EPluginHooks.BackendMiddleware]: (params: THookParams[EPluginHooks.BackendMiddleware]) => {

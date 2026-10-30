@@ -22,7 +22,7 @@
  *
  * Docs: docs/13-files-and-templates.md
  */
-import type { TFileDatabase, TFileStore } from "@luna-park/plugin";
+import type { TFileDatabaseExport, TFileStore, TFileStoreExport } from "@luna-park/plugin";
 import { EElementType, LogicType, makeLogicNode } from "@luna-park/plugin";
 
 import { internals } from "@/features/internals/internals.ts";
@@ -36,7 +36,7 @@ function getStoreFile() {
             lastGreeting: LogicType.string({ name: "lastGreeting", options: { freeze: true } })
         }, { options: { freeze: true } }),
         type: EElementType.Store
-    } satisfies Partial<TFileStore<true>>;
+    } satisfies Partial<TFileStoreExport>;
 }
 
 function getNotesFile() {
@@ -53,7 +53,7 @@ function getNotesFile() {
             archived: LogicType.boolean({ name: "archived", options: { freeze: true } })
         }, { options: { freeze: true, insert: -1 } }),
         type: EElementType.Database
-    } satisfies Partial<TFileDatabase<true>>;
+    } satisfies Partial<TFileDatabaseExport>;
 }
 
 /** Creates the plugin files if they don't exist yet. Call from `lifecycle.mount`. */
