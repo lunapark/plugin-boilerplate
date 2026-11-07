@@ -8,7 +8,7 @@ A Luna Park plugin is an **npm package (ES module)** whose default export is `ma
 The editor provides `vue`, `vue-router` and `@luna-park/design` itself. That is why they are peer dependencies and are kept out of the bundle.
 
 A plugin can add:
-- **editor** features: nodes, components, tokens, panels, inputs, interfaces, guards, templates, settings, windows;
+- **editor** features: nodes, components, tokens, panels, inputs, interfaces, guards, templates, workspace, windows;
 - **build** features: npm dependencies, `.env` secrets and code injections in the app that Luna Park exports.
 
 ## Requirements

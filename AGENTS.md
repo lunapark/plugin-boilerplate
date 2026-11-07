@@ -24,7 +24,7 @@ pnpm preview     # luna-preview on http://127.0.0.1:2084 (install that URL in th
 | Add a logic node | `makeLogicNode({...})`, add it to `editor.nodes` | `src/features/nodes/*.ts` |
 | Add a UI component | Vue SFC + `TComponent` with `build.imports` → export the SFC from `src/entries/runtime.ts` | `src/features/components/` |
 | Add plugin settings (simple) | field in `configSchema` | `src/features/config/index.ts` |
-| Add plugin settings (complex or secret) | field in `internals` + a `settings` tab | `src/features/internals/` |
+| Add plugin settings (complex or secret) | field in `internals` + a `workspace` section | `src/features/internals/` |
 | Run code in the generated frontend | export from `src/entries/runtime.ts`, import via `RUNTIME_TARGET` | `src/features/config/runtime.ts` |
 | Run code in the generated backend | export from `src/entries/server.ts`, import via `SERVER_TARGET` | `src/features/backend/server.ts` |
 | Add a secret | `internals` → `build.env` → `process.env.X` in generated code | `src/features/backend/build.ts` |
@@ -64,7 +64,7 @@ import {
 
 `makePlugin` keys:
 - **Identity:** `id`, `name`, `icon`, `description`, `color`, `llm`.
-- **Settings:** `config`, `internals`, `settings`.
+- **Settings:** `config`, `internals`, `workspace`.
 - **Editor hooks:** `lifecycle.{mount,update,unmount}`, `hooks`, `windows`.
 - **Contributions:** `editor.{components,nodes,tokens,panel.element,inputs,interfaces,guards,templates,wrapper}`.
 - **Injection:** `inject.{css,js}`.

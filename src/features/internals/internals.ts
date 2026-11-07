@@ -4,7 +4,7 @@
  * - Pass this object to `makePlugin({ internals })`.
  * - At load time the editor copies the values saved in the project (`app.config.plugins[id].internals`)
  *   into it with a **shallow** `Object.assign`, and saves it back when it changes.
- * - Make it `reactive()` so Vue settings tabs can bind to it with `v-model`.
+ * - Make it `reactive()` so Vue workspace sections can bind to it with `v-model`.
  * - Option functions receive it as `env.internals`. Other code can import it directly.
  *
  * Every field needs a default here, because older projects may have saved fewer fields
@@ -32,7 +32,7 @@ export type TInternals = {
         notes?: string;
         store?: string;
     };
-    /** Free text edited in the settings tab. */
+    /** Free text edited in the workspace section. */
     signature: string;
 };
 

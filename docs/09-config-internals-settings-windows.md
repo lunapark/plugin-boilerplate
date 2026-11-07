@@ -1,4 +1,4 @@
-# 09 – Config, internals, settings and windows
+# 09 – Config, internals, workspace and windows
 
 ## `config`: schema-driven settings
 Example: [`src/features/config/`](../src/features/config)
@@ -34,18 +34,20 @@ makePlugin({ internals, … });
 
 | | `config` | `internals` |
 |---|---|---|
-| UI | auto-generated form | your `settings` components |
+| UI | auto-generated form | your `workspace.sections` components |
 | Data | flat typed values | any JSON |
 | Triggers `lifecycle.update` | ✅ | ❌ (use `watch`) |
 | Typical | colours, toggles, enums | lists, credentials, created file ids, roles |
 
-## `settings`: custom tabs
+## `workspace`: custom sections
 ```ts
-settings: [{ component: shallowRef(LSettings), icon: faSliders, label: "General" }]
+workspace: {
+    sections: [{ id: "general", component: LSettings, description: "…", icon: faSliders, title: "General" }]
+}
 ```
-- Each tab is a prop-less Vue component that edits `internals`.
-- Build them with `@luna-park/design` (`LInput`, `LCheckbox`, `LButton`, `LDropdown`, `LSwitch`, …) and the editor's CSS variables (`--length-*`, `--font-size-*`, `--color-*`).
-- For Histoire stories, wrap a tab in `LSettingsStoryWrapper` (from `@luna-park/plugin`) to preview it at the real popup size.
+- The plugin button in the editor header opens the plugin's workspace: the `config` form, then each section, then a Plugin section to remove it.
+- Each section is a prop-less Vue component that edits `internals`. The editor renders its title, icon and description, and lists it in the workspace toolbar.
+- Build them with `@luna-park/design` (`LCard`, `LSettingRow`, `LInput`, `LCheckbox`, `LButton`, `LDropdown`, `LSwitch`, …) and the editor's CSS variables (`--length-*`, `--font-size-*`, `--color-*`).
 
 ## `windows`: standalone pages
 Example: [`src/features/windows/`](../src/features/windows)

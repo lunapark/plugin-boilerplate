@@ -20,7 +20,7 @@ export default makePlugin<typeof configSchema, TInternals>({ id, name, icon, ...
 | `llm` | `string` (Markdown) | | Read by the AI assistant (Sidekick) | `src/llm.md` |
 | `config` | `TSchema<TObject>` | | Auto-generated settings form, then `env.config` | [config](../src/features/config) |
 | `internals` | `object` (reactive) | | Persisted free-form state, then `env.internals` | [internals](../src/features/internals) |
-| `settings` | `Array<{ component, icon?, label }>` | | Tabs in the plugin popup | [internals](../src/features/internals), [windows](../src/features/windows) |
+| `workspace` | `{ sections: Array<{ id, component, icon, title, description? }> }` | | Sections of the plugin's workspace | [internals](../src/features/internals), [windows](../src/features/windows) |
 | `windows` | `Record<string, Component>` | | `/plugin?plugin=<target>&window=<key>` | [windows](../src/features/windows) |
 | `lifecycle` | `{ mount?, update?, unmount? }` | | Editor hooks (see [10](10-lifecycle.md)) | `src/index.ts` |
 | `hooks` | `{ [EPluginHooks]: fn }` | | Simulated backend (see [12](12-backend.md)) | [hooks](../src/features/hooks) |
@@ -52,7 +52,7 @@ type TOption<TEnv, T> = T | ((env: TEnv) => T | Promise<T>);
 
 So a node list can depend on settings (`nodes: ({ internals }) => [...]`), and a wrapper or CSS can differ between editor and build (`({ mode }) => ...`).
 
-Top-level keys (`config`, `internals`, `lifecycle`, `settings`, …) are plain values.
+Top-level keys (`config`, `internals`, `lifecycle`, `workspace`, …) are plain values.
 
 ## `TEnv`
 

@@ -8,9 +8,9 @@
  * Docs: docs/09-config-internals-settings-windows.md
  */
 import { faWindowRestore } from "@fortawesome/free-solid-svg-icons";
-import type { TBasePlugin } from "@luna-park/plugin";
+import type { TPluginWorkspaceSection } from "@luna-park/plugin";
 import type { Component } from "vue";
-import { markRaw, shallowRef } from "vue";
+import { markRaw } from "vue";
 
 import LCallbackWindow from "@/features/windows/LCallbackWindow.vue";
 import LWindowsSettings from "@/features/windows/LWindowsSettings.vue";
@@ -19,10 +19,12 @@ export const windows: Record<string, Component> = {
     Callback: markRaw(LCallbackWindow)
 };
 
-export const windowsSettings: NonNullable<TBasePlugin["settings"]> = [
+export const windowsSections: Array<TPluginWorkspaceSection> = [
     {
-        component: shallowRef(LWindowsSettings),
+        id: "windows",
+        component: LWindowsSettings,
+        description: "Standalone pages opened outside the editor, such as OAuth or payment callbacks.",
         icon: faWindowRestore,
-        label: "Windows"
+        title: "Windows"
     }
 ];

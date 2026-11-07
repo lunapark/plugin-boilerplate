@@ -5,9 +5,9 @@ Full-page plugin views served by Luna Park at `https://luna-park.app/plugin?plug
 | File | Role |
 |------|------|
 | `LCallbackWindow.vue` | The `Callback` window: posts its query params to `window.opener` and closes |
-| `LWindowsSettings.vue` | Settings tab that opens the window as a popup and shows what comes back |
+| `LWindowsSettings.vue` | Workspace section that opens the window as a popup and shows what comes back |
 | `url.ts` | `getWindowUrl(key, target?, params?)` |
-| `index.ts` | The `windows` record and the extra `settings` tab |
+| `index.ts` | The `windows` record and the extra workspace section |
 
 ## What a window has (and doesn't)
 - ✅ Your plugin module, Vue, `vue-router`, `@luna-park/design`, and the URL query params.

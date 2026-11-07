@@ -7,7 +7,7 @@
  * through `Static<typeof configSchema>`.
  *
  * Choose `config` for simple values a form can edit. For complex state that needs a custom UI,
- * use `internals` plus `settings` instead (see ../internals).
+ * use `internals` plus `workspace` sections instead (see ../internals).
  *
  * The values have to reach three places:
  * - the editor preview: `lifecycle.mount` / `lifecycle.update` call `applyConfig` (see src/index.ts);

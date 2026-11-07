@@ -23,7 +23,7 @@ In the Luna Park editor, open **Plugins → Install from URL** and enter `http:/
 | Feature | Folder | Plugin API | Guide |
 |---------|--------|------------|-------|
 | Plugin config form | [`config`](src/features/config) | `config`, `lifecycle.update`, `AppSetup` injection | [09](docs/09-config-internals-settings-windows.md) |
-| Persisted state + settings tabs | [`internals`](src/features/internals) | `internals`, `settings` | [09](docs/09-config-internals-settings-windows.md) |
+| Persisted state + workspace sections | [`internals`](src/features/internals) | `internals`, `workspace` | [09](docs/09-config-internals-settings-windows.md) |
 | Logic nodes (12 examples) | [`nodes`](src/features/nodes) | `editor.nodes`, `makeLogicNode`, `LogicType` | [04](docs/04-nodes.md), [03](docs/03-type-system.md) |
 | UI components | [`components`](src/features/components) | `editor.components`, `TComponent` (props, slots, models, emits, llm) | [05](docs/05-components.md) |
 | Design tokens + global CSS | [`tokens`](src/features/tokens) | `editor.tokens`, `inject.css` | [06](docs/06-styling-and-tokens.md) |
@@ -63,7 +63,7 @@ vite.config.ts        multi-entry library build
 6. [Styling & tokens](docs/06-styling-and-tokens.md)
 7. [Element panels](docs/07-element-panels.md)
 8. [Inputs & interfaces](docs/08-inputs-and-interfaces.md)
-9. [Config, internals, settings, windows](docs/09-config-internals-settings-windows.md)
+9. [Config, internals, workspace, windows](docs/09-config-internals-settings-windows.md)
 10. [Lifecycle](docs/10-lifecycle.md)
 11. [Build & code generation](docs/11-build-and-codegen.md): injections, secrets, generated-app modules
 12. [Backend](docs/12-backend.md): scopes, server runtime, guards, hooks
@@ -78,7 +78,7 @@ vite.config.ts        multi-entry library build
 5. `pnpm typecheck && pnpm lint`, then `pnpm build` and `npm publish`. Keep the `luna-park` and `plugin` keywords so the editor's plugin search finds it.
 
 ## Real-world plugins
-- **Mail**: backend node, SMTP settings tab, secret in `.env`, server injection.
+- **Mail**: backend node, SMTP workspace section, secret in `.env`, server injection.
 - **Motion**: element panel + directive, config, runtime entry.
 - **Nuxt UI**: 100+ components, tokens, templates, interfaces, custom inputs, wrapper, Vite/Vue plugin injections.
 - **Users**: hooks, guards, project databases and stores, OAuth window, injected HTTP API.

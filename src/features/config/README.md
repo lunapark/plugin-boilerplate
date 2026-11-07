@@ -19,7 +19,7 @@ project file ──► env.config ──┬─► lifecycle.mount / update ─�
 - The settings are plain values (strings, numbers, booleans, enums, colours) and an auto-generated form is enough.
 
 ## Don't use it when
-- You need lists, nested editors or a custom UI. Use [`internals` + `settings`](../internals/README.md).
+- You need lists, nested editors or a custom UI. Use [`internals` + `workspace`](../internals/README.md).
 - The value is a secret. Config is saved in plain text in the project and inlined into generated code. Use `internals` + `build.env` ([backend](../backend/README.md)).
 
 ## Remove it

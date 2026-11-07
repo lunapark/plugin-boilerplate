@@ -7,7 +7,7 @@
  * `{ config, inputs: Record<key, TSchema>, outputs: Record<key, TSchema> }`.
  *
  * Two common patterns:
- * 1. Enum from plugin state: the options come from `internals`, which is edited in a settings tab.
+ * 1. Enum from plugin state: the options come from `internals`, which is edited in a workspace section.
  * 2. Generic output: the output type follows whatever is connected to an input.
  *
  * Nodes can also declare `dynamics: { inputs(io), outputs(io) }` to add or replace whole pins
@@ -44,7 +44,7 @@ export const dynamicEnumNode = makeLogicNode({
     },
     documentation: {
         short: "Choose one of the categories defined in the plugin settings",
-        description: "Example of a dynamic enum. Edit the categories in the plugin's General settings tab."
+        description: "Example of a dynamic enum. Edit the categories in the plugin's General workspace section."
     },
     build: {
         // `internals` doesn't exist in the generated app, so the labels are inlined at build time.

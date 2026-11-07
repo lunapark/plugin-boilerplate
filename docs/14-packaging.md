@@ -51,4 +51,4 @@ await extractFile("node_modules/some-lib/Button.vue", "src/generated/button.ts")
 It reads props, slots, emits and models through the TypeScript compiler, and turns JSDoc into descriptions. Review and adjust the output (names, `build`, `documentation`).
 
 ## Stories (optional)
-The Users and Nuxt UI plugins use [Histoire](https://histoire.dev) to develop settings tabs and inputs in isolation. Wrap settings components in `LSettingsStoryWrapper` from `@luna-park/plugin`.
+The Users and Nuxt UI plugins use [Histoire](https://histoire.dev) to develop workspace sections and inputs in isolation. Wrap settings components in `LSettingsStoryWrapper` from `@luna-park/plugin`.

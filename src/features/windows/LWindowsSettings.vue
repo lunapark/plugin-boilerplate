@@ -1,27 +1,31 @@
 <!--
-    Settings tab that opens the "Callback" window as a popup and shows what it sends back.
-    It is a second entry in the `settings` array: a plugin can have as many tabs as it needs.
+    Workspace section that opens the "Callback" window as a popup and shows what it sends back.
+    It is a second entry in `workspace.sections`: a plugin can have as many sections as it needs.
 -->
 <template>
-    <div class="windows-settings">
-        <span class="description">
-            Opens the plugin's <code>Callback</code> window in a popup. The window sends its URL
-            parameters back with <code>postMessage</code>.
-        </span>
-        <LButton
-            :icon="faUpRightFromSquare"
-            small
-            @click="open"
+    <LCard>
+        <LSettingRow
+            description="Opens the plugin's Callback window in a popup. The window sends its URL parameters back with postMessage."
+            title="Callback window"
         >
-            Open callback window
-        </LButton>
-        <pre v-if="received">{{ received }}</pre>
-    </div>
+            <LButton
+                :icon="faUpRightFromSquare"
+                small
+                @click="open"
+            >
+                Open
+            </LButton>
+        </LSettingRow>
+        <pre
+            v-if="received"
+            class="received"
+        >{{ received }}</pre>
+    </LCard>
 </template>
 
 <script setup lang="ts">
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { LButton } from "@luna-park/design";
+import { LButton, LCard, LSettingRow } from "@luna-park/design";
 import { onBeforeUnmount, ref } from "vue";
 
 import { getWindowUrl, WINDOW_MESSAGE_TYPE } from "@/features/windows/url.ts";
@@ -46,16 +50,11 @@ onBeforeUnmount(() => window.removeEventListener("message", onMessage));
 </script>
 
 <style scoped>
-.windows-settings {
-    padding: var(--length-s);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--length-xs);
-
-    .description {
-        color: var(--color-content-litest);
-        font-size: var(--font-size-s);
-    }
+.received {
+    margin: 0;
+    padding: var(--length-xs) var(--length-s);
+    border-top: 1px solid var(--color-background-2);
+    font-size: var(--font-size-xs);
+    color: var(--color-content-lite);
 }
 </style>

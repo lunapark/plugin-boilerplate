@@ -18,7 +18,7 @@ Code for the generated **Node/Fastify** backend: a backend node, a secret in `.e
 | Injected route | not available, so simulate it in `methods` | `GET <prefix>/_boilerplate/status` |
 
 ## Secrets checklist
-1. Keep the secret in `internals` and edit it in a settings tab (`type="password"`).
+1. Keep the secret in `internals` and edit it in a workspace section (`type="password"`).
 2. Return it from `build.env`: `{ BOILERPLATE_API_KEY: internals.apiKey }`.
 3. In generated code, write `process.env.BOILERPLATE_API_KEY` and never the value. When serialising a whole settings object, swap the secret for a placeholder and then replace that with `process.env.X` (see the Mail plugin's `build.ts`).
 

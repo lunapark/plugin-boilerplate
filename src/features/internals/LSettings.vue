@@ -1,72 +1,80 @@
 <!--
-    Settings tab, registered with `makePlugin({ settings: [{ component, icon, label }] })`.
+    Workspace section, registered with `makePlugin({ workspace: { sections: [{ id, component, icon, title }] } })`.
 
-    The editor shows each tab in the plugin's configuration popup (the plugin button in the
-    editor header). A tab is an ordinary Vue component with no props, so it edits the reactive
+    The editor shows each section in the plugin's workspace (opened from the plugin button in the
+    editor header). A section is an ordinary Vue component with no props, so it edits the reactive
     `internals` object directly and the editor persists the changes.
 
     Use `@luna-park/design` components so the UI matches the editor. That package is provided by
     the editor at runtime: never import it from runtime/server code.
-    Stories: wrap this component in `LSettingsStoryWrapper` (from `@luna-park/plugin`) to preview
-    it at the real size in Histoire.
+    `LCard` groups rows into a bordered block, and `LSettingRow` lays out a title, a description
+    and a control, like the editor's own workspaces.
 -->
 <template>
     <div class="settings">
-        <h2>General</h2>
-        <span class="description">
-            Values stored in the plugin's internals. They are saved with the project.
-        </span>
-        <LInput
-            v-model="internals.signature"
-            label="Signature"
-            placeholder="Sent from Luna Park"
-        />
+        <LCard>
+            <LSettingRow
+                description="Stored in the plugin's internals and saved with the project."
+                title="Signature"
+            >
+                <LInput
+                    v-model="internals.signature"
+                    placeholder="Sent from Luna Park"
+                    small
+                />
+            </LSettingRow>
+            <LSettingRow
+                description="At build time this key goes to the generated .env file. It is never written into the code."
+                title="API key"
+            >
+                <LInput
+                    v-model="internals.apiKey"
+                    placeholder="sk_..."
+                    small
+                    type="password"
+                />
+            </LSettingRow>
+        </LCard>
 
-        <h2>Secret</h2>
-        <span class="description">
-            At build time this key goes to the generated <code>.env</code> file. It is never written into the code.
-        </span>
-        <LInput
-            v-model="internals.apiKey"
-            label="API key"
-            placeholder="sk_..."
-            type="password"
-        />
-
-        <h2>Categories</h2>
-        <span class="description">
-            Used as a dynamic dropdown by the "Pick category" node.
-        </span>
-        <div
-            v-for="category in internals.categories"
-            :key="category.id"
-            class="row"
-        >
-            <LInput
-                v-model="category.label"
-                label="Label"
-            />
-            <LButton
-                :icon="faTrash"
-                small
-                square
-                title="Remove category"
-                @click="removeCategory(category.id)"
-            />
-        </div>
-        <LButton
-            :icon="faPlus"
-            small
-            @click="addCategory"
-        >
-            Add category
-        </LButton>
+        <LCard>
+            <LSettingRow
+                description="Used as a dynamic dropdown by the Pick category node."
+                title="Categories"
+            >
+                <LButton
+                    :icon="faPlus"
+                    small
+                    @click="addCategory"
+                >
+                    Add
+                </LButton>
+            </LSettingRow>
+            <div
+                v-for="category in internals.categories"
+                :key="category.id"
+                class="category"
+            >
+                <LInput
+                    v-model="category.label"
+                    class="label"
+                    small
+                />
+                <LButton
+                    :icon="faTrash"
+                    small
+                    square
+                    title="Remove category"
+                    transparent
+                    @click="removeCategory(category.id)"
+                />
+            </div>
+        </LCard>
     </div>
 </template>
 
 <script setup lang="ts">
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
-import { LButton, LInput } from "@luna-park/design";
+import { LButton, LCard, LInput, LSettingRow } from "@luna-park/design";
 
 import { internals } from "@/features/internals/internals.ts";
 
@@ -83,34 +91,18 @@ function removeCategory(id: string) {
 <style scoped>
 /* The editor's design tokens (--length-*, --font-size-*, --color-*) are available in the editor. */
 .settings {
-    padding: var(--length-s);
     display: flex;
     flex-direction: column;
-    gap: var(--length-xs);
+    gap: var(--length-s);
 
-    h2 {
-        font-size: var(--font-size-xs);
-        text-transform: uppercase;
-        font-weight: 600;
-        color: var(--color-content-liter);
-        margin: var(--length-s) 0 0;
-
-        &:first-child {
-            margin-top: 0;
-        }
-    }
-
-    .description {
-        color: var(--color-content-litest);
-        font-size: var(--font-size-s);
-    }
-
-    .row {
+    .category {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         gap: var(--length-xs);
+        padding: var(--length-xxs) var(--length-s);
+        border-top: 1px solid var(--color-background-2);
 
-        &:deep(.input) {
+        .label {
             flex: 1 1 auto;
         }
     }

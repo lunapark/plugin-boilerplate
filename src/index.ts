@@ -7,7 +7,7 @@
  *
  * Option forms (see docs/02-plugin-manifest.md):
  * - top-level keys (`id`, `name`, `icon`, `config`, `internals`, `lifecycle`, `hooks`,
- *   `settings`, `windows`, `llm`, ...) are plain values;
+ *   `windows`, `workspace`, `llm`, ...) are plain values;
  * - every key under `editor`, `build` and `inject` can be a value **or** a (possibly async)
  *   function of `env` = `{ config, internals, mode, app, ... }`. The editor re-evaluates these
  *   functions when config or internals change. The compiler calls them with `mode: "build"`.
@@ -26,12 +26,12 @@ import { getHooksInjections, hooks } from "@/features/hooks/index.ts";
 import { inputs } from "@/features/inputs/index.ts";
 import { addMoneyNode, interfaces } from "@/features/interfaces/index.ts";
 import type { TInternals } from "@/features/internals/index.ts";
-import { internals, settings } from "@/features/internals/index.ts";
+import { internals, sections } from "@/features/internals/index.ts";
 import { exampleNodes } from "@/features/nodes/index.ts";
 import { elementPanels } from "@/features/panel/index.ts";
 import { templates } from "@/features/templates/index.ts";
 import { getInjectedCss, tokens } from "@/features/tokens/index.ts";
-import { windows, windowsSettings } from "@/features/windows/index.ts";
+import { windows, windowsSections } from "@/features/windows/index.ts";
 import { getWrapper, getWrapperInjections } from "@/features/wrapper/index.ts";
 import { log, setEnv } from "@/lib/env.ts";
 import { mergeInjections } from "@/lib/injections.ts";
@@ -57,8 +57,6 @@ export default makePlugin<typeof configSchema, TInternals>({
     config: configSchema,
     /** Persisted free-form state (features/internals). Values reach `env.internals`. */
     internals,
-    /** Custom tabs in the plugin's settings popup. */
-    settings: [...settings, ...windowsSettings],
 
     // ─── Lifecycle (editor only) ────────────────────────────────────────────────────────────
     lifecycle: {
@@ -131,5 +129,10 @@ export default makePlugin<typeof configSchema, TInternals>({
             getBackendInjections(env),
             getHooksInjections(env)
         )
+    },
+
+    /** Sections of the plugin's workspace, opened from its button in the editor header. */
+    workspace: {
+        sections: [...sections, ...windowsSections]
     }
 });

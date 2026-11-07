@@ -1,6 +1,6 @@
 {
     "name": "@luna-park/plugin-boilerplate",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "private": false,
     "description": "Boilerplate plugin for Luna Park: a documented example of every plugin feature",
     "keywords": [
@@ -47,25 +47,25 @@
     },
     "dependencies": {
         "@fortawesome/free-solid-svg-icons": "^7.3.1",
-        "vue": "^3.5.44"
+        "vue": "^3.5.45"
     },
     "devDependencies": {
-        "@luna-park/design": "^1.5.0",
+        "@luna-park/design": "^1.7.0",
         "@luna-park/eslint-config": "^1.4.5",
-        "@luna-park/plugin": "^2.0.1",
+        "@luna-park/plugin": "^2.1.0",
         "@types/node": "^26.6.6",
         "@vitejs/plugin-vue": "^6.0.10",
         "@vue/tsconfig": "^0.9.1",
-        "eslint": "^10.13.0",
-        "globals": "^17.13.0",
+        "eslint": "^10.14.0",
+        "globals": "^17.14.0",
         "typescript": "^6.0.3",
         "typescript-eslint": "^8.72.1",
-        "vite": "^8.3.5",
+        "vite": "^8.3.6",
         "vite-plugin-css-injected-by-js": "^5.0.3",
-        "vue-tsc": "^3.3.13"
+        "vue-tsc": "^3.3.14"
     },
     "peerDependencies": {
-        "@luna-park/design": "^1.4.0",
+        "@luna-park/design": "^1.7.0",
         "vue": "^3.5.43"
     }
 }
