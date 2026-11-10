@@ -34,6 +34,7 @@ export const list = {
     documentation: {
         description: "A bullet list with a customisable item template."
     },
+    guides: ["cards"],
     icon: faList,
     llm,
     properties,

@@ -7,7 +7,7 @@
  *
  * Option forms (see docs/02-plugin-manifest.md):
  * - top-level keys (`id`, `name`, `icon`, `config`, `internals`, `lifecycle`, `hooks`,
- *   `windows`, `workspace`, `llm`, ...) are plain values;
+ *   `windows`, `workspace`, `llm`, `guides`, ...) are plain values;
  * - every key under `editor`, `build` and `inject` can be a value **or** a (possibly async)
  *   function of `env` = `{ config, internals, mode, app, ... }`. The editor re-evaluates these
  *   functions when config or internals change. The compiler calls them with `mode: "build"`.
@@ -18,7 +18,7 @@ import { makePlugin } from "@luna-park/plugin";
 
 import { getBackendInjections, getEnv, packageImport } from "@/features/backend/build.ts";
 import { backendNodes } from "@/features/backend/nodes.ts";
-import { components } from "@/features/components/index.ts";
+import { components, guides } from "@/features/components/index.ts";
 import { applyConfig, configSchema, getConfigInjections } from "@/features/config/index.ts";
 import { ensureFiles, saveGreetingNode } from "@/features/files/index.ts";
 import { guards } from "@/features/guards/index.ts";
@@ -130,6 +130,9 @@ export default makePlugin<typeof configSchema, TInternals>({
             getHooksInjections(env)
         )
     },
+
+    /** Markdown guides on how several components fit together (features/components/guides.ts). */
+    guides,
 
     /** Sections of the plugin's workspace, opened from its button in the editor header. */
     workspace: {

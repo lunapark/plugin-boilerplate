@@ -19,6 +19,7 @@ export const card = {
     models: { modelValue: LogicType.number() },
     emits: { change: LogicType.number({ name: "value" }) },
     documentation: { description: "…", link: "https://…" },
+    guides: ["cards"],                                            // plugin guides covering it
     icon: faSquare,
     llm: cardDoc                                                  // Markdown for the AI assistant
 } satisfies TComponent;
@@ -36,11 +37,29 @@ export const card = {
 | `emits` | Events. The schema is the payload type (`LogicType.void()` for none) |
 | `build.name` | Tag used in generated templates (default: last segment of `name`) |
 | `build.imports` | Imports added to the generated component file |
-| `documentation` | `description` and `link`, shown in the element panel |
+| `documentation` | `description` and `link`, shown in the element panel. The AI assistant also lists components with their `description`: write one when the name alone doesn't say what the component is for |
+| `guides` | Names of the plugin guides that cover this component (below) |
 | `icon` | Picker icon |
 | `llm` | Markdown read by the AI assistant (see `list.md`) |
 | `internals` | Per-instance hidden data, deep-cloned when the component is placed and passed as attributes |
 | `preview` | Declared in the type, **not used by the editor yet** |
+
+## Guides
+A component's `llm` covers that component alone. When several components only work together (a layout and its parts, a list and its items), write the rules once as a plugin **guide** instead of repeating them in each `llm`:
+
+```ts
+// src/features/components/guides.ts
+export const guides: Record<string, TPluginGuide> = {
+    cards: { content: cardsDoc, description: "How Card, List and Counter fit together" }
+};
+
+// makePlugin({ ..., guides })
+// each covered component: guides: ["cards"]
+```
+
+- `description` says what the guide covers. The assistant sees every guide's name and description when it lists the plugin, so it can read one before choosing components.
+- `getComponents` returns the guide names of each component (`boilerplate:cards`). The assistant reads them through the `documentation` tool, once per conversation.
+- Keep guide names stable and lowercase (`dashboard`, `site-layout`). Explain where each component goes: which parent, which slot, what must not be nested. Show one minimal example in the Luna Park layout syntax.
 
 ## Dynamic slots
 ```ts

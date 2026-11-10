@@ -7,6 +7,7 @@ Vue components users can drop into their pages from the element picker.
 | `BpCard.vue` + `card.ts` | Boilerplate/Card | properties (string, enum, boolean, token), named slots, `build`, `documentation`, `icon` |
 | `BpList.vue` + `list.ts` + `list.md` | Boilerplate/List | scoped slot, **dynamic slots function**, `llm` doc |
 | `BpCounter.vue` + `counter.ts` | Boilerplate/Counter | `models` (v-model), `emits` (events) |
+| `guides.ts` + `cards.md` | – | plugin `guides` shared by the three components above |
 
 ## Two places a component runs
 
@@ -23,7 +24,7 @@ Each component must also be exported from `src/entries/runtime.ts` under the sam
 1. Write the Vue SFC: props, slots, `defineModel`, `defineEmits`, scoped CSS.
 2. Describe it in a `TComponent`: `name: "Folder/Name"`, `properties`, `slots`, `models`, `emits`.
 3. Set `build: { name, imports: [{ from: RUNTIME_TARGET, name }] }` and export the SFC from `src/entries/runtime.ts`.
-4. Add `documentation.description` and, for complex components, an `llm` Markdown file.
+4. Add `documentation.description` and, for complex components, an `llm` Markdown file. If it must be nested with other components, cover it in a guide (`guides.ts`) and list the guide in its `guides`.
 5. Add it to the array in `index.ts`.
 
 Tip: `@luna-park/plugin/extractor` (`extractFile`) can generate the `TComponent` from a `.vue` / `.d.ts` file. See [14 – packaging](../../../docs/14-packaging.md).

@@ -22,8 +22,8 @@ importers:
         specifier: ^1.4.5
         version: 1.4.5(ff3d3bf4806ceb1c47118cfe58fad496)
       '@luna-park/plugin':
-        specifier: ^2.1.0
-        version: 2.1.0
+        specifier: ^2.3.0
+        version: 2.3.0
       '@types/node':
         specifier: ^26.6.6
         version: 26.6.6
@@ -322,8 +322,8 @@ packages:
       stylelint: ^17.6.0
       typescript-eslint: ^8.58.0
 
-  '@luna-park/plugin@2.1.0':
-    resolution: {integrity: sha512-9oMH4AWJ5gfAHi/IOgBQc909G9zBqiSXA6bIXc9/FsW/Vr9ole3lVCpG2+oMtTOk8YnNrfRjxijyTQt3WUUOTA==}
+  '@luna-park/plugin@2.3.0':
+    resolution: {integrity: sha512-uvNcQ43a5Tl2sBzKGwdEO89rvd2LAVd8NI7tDXoKbmPnp4Y8UO3HUHM+uz6hBYyneBY1GnoR2KLLwjlCxdiN6w==}
     hasBin: true
 
   '@luna-park/utils@2.0.0':
@@ -2186,7 +2186,7 @@ snapshots:
       stylelint: 17.16.0(supports-color@10.2.2)(typescript@6.0.3)
       typescript-eslint: 8.72.1(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
 
-  '@luna-park/plugin@2.1.0':
+  '@luna-park/plugin@2.3.0':
     dependencies:
       '@electric-sql/pglite': 0.5.13
       '@fastify/cors': 11.3.1

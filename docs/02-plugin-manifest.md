@@ -18,6 +18,7 @@ export default makePlugin<typeof configSchema, TInternals>({ id, name, icon, ...
 | `description` | `string` | | Plugin list | `src/index.ts` |
 | `color` | `string` | | Tint of the plugin's elements in the layout tree | `src/index.ts` |
 | `llm` | `string` (Markdown) | | Read by the AI assistant (Sidekick) | `src/llm.md` |
+| `guides` | `Record<string, { content, description }>` | | Markdown the AI assistant reads on how several components fit together (see [05](05-components.md#guides)) | [components](../src/features/components/guides.ts) |
 | `config` | `TSchema<TObject>` | | Auto-generated settings form, then `env.config` | [config](../src/features/config) |
 | `internals` | `object` (reactive) | | Persisted free-form state, then `env.internals` | [internals](../src/features/internals) |
 | `workspace` | `{ sections: Array<{ id, component, icon, title, description? }> }` | | Sections of the plugin's workspace | [internals](../src/features/internals), [windows](../src/features/windows) |

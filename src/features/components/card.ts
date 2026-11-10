@@ -11,7 +11,9 @@
  * - `build`: how the compiled app gets the component. **Required for exported apps.** `name` is
  *   the tag written in the template, and `imports` the import statements added to the file.
  *   Without it the generated template uses a tag nothing defines;
- * - `documentation`, `icon`, `llm`: help for users and for the AI assistant.
+ * - `documentation`, `icon`, `llm`: help for users and for the AI assistant. The
+ *   `documentation.description` is also how the assistant tells components apart in its list;
+ * - `guides`: names of the plugin guides that cover this component (see ./guides.ts).
  *
  * `satisfies TComponent` keeps the literal types while checking the shape.
  *
@@ -37,6 +39,7 @@ export const card = {
         description: "A container with a title, a body and an optional footer.",
         link: "https://github.com/lunapark/plugin-boilerplate/tree/main/src/features/components"
     },
+    guides: ["cards"],
     icon: faSquare,
     properties: {
         // Edited with the plugin's custom swatch input (features/inputs)

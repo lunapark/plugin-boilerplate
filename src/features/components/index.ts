@@ -14,6 +14,7 @@ import type { TComponent } from "@luna-park/plugin";
 
 import { card } from "@/features/components/card.ts";
 import { counter } from "@/features/components/counter.ts";
+export { guides } from "@/features/components/guides.ts";
 import { list } from "@/features/components/list.ts";
 
 export const components: Array<TComponent> = [

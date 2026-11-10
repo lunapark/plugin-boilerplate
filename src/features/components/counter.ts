@@ -30,6 +30,7 @@ export const counter = {
         change: LogicType.number({ name: "value" }),
         reset: LogicType.void()
     },
+    guides: ["cards"],
     icon: faPlusMinus,
     models: {
         modelValue: LogicType.number({ name: "value" })

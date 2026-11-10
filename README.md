@@ -25,7 +25,7 @@ In the Luna Park editor, open **Plugins → Install from URL** and enter `http:/
 | Plugin config form | [`config`](src/features/config) | `config`, `lifecycle.update`, `AppSetup` injection | [09](docs/09-config-internals-settings-windows.md) |
 | Persisted state + workspace sections | [`internals`](src/features/internals) | `internals`, `workspace` | [09](docs/09-config-internals-settings-windows.md) |
 | Logic nodes (12 examples) | [`nodes`](src/features/nodes) | `editor.nodes`, `makeLogicNode`, `LogicType` | [04](docs/04-nodes.md), [03](docs/03-type-system.md) |
-| UI components | [`components`](src/features/components) | `editor.components`, `TComponent` (props, slots, models, emits, llm) | [05](docs/05-components.md) |
+| UI components + AI guides | [`components`](src/features/components) | `editor.components`, `TComponent` (props, slots, models, emits, llm, guides), `guides` | [05](docs/05-components.md) |
 | Design tokens + global CSS | [`tokens`](src/features/tokens) | `editor.tokens`, `inject.css` | [06](docs/06-styling-and-tokens.md) |
 | App wrapper | [`wrapper`](src/features/wrapper) | `editor.wrapper`, `AppImport` / `AppBody` | [11](docs/11-build-and-codegen.md) |
 | Element panel + directive | [`panel`](src/features/panel) | `editor.panel.element` | [07](docs/07-element-panels.md) |
@@ -59,7 +59,7 @@ vite.config.ts        multi-entry library build
 2. [Plugin manifest](docs/02-plugin-manifest.md): every `makePlugin` field, `TOption`, `TEnv`, namespacing
 3. [Type system](docs/03-type-system.md): `LogicType`, arguments, `options.*`, `LogicUtil`, `Static`
 4. [Nodes](docs/04-nodes.md): kinds, `this`, async, config, dynamic types, display, docs, codegen
-5. [Components](docs/05-components.md): `TComponent`, slots, models, emits, exported apps
+5. [Components](docs/05-components.md): `TComponent`, slots, models, emits, AI guides, exported apps
 6. [Styling & tokens](docs/06-styling-and-tokens.md)
 7. [Element panels](docs/07-element-panels.md)
 8. [Inputs & interfaces](docs/08-inputs-and-interfaces.md)

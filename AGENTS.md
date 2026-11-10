@@ -49,7 +49,7 @@ pnpm preview     # luna-preview on http://127.0.0.1:2084 (install that URL in th
 11. **`env` in build mode** has no `addFile`, `getFile`, `log` or `backend`. Option functions must work with `mode: "build"`.
 12. **Prefix everything global**: CSS variables (`--bp-`), env keys (`BOILERPLATE_`), routes (`/_boilerplate/`), interface names.
 13. **Components' CSS** must not rely on editor variables (`--color-*`, `--length-*`). Settings tabs, panels and inputs (editor-only) should use them.
-14. **Document for the AI assistant.** Fill in `documentation.short` / `description` on nodes, `documentation` / `llm` on components, and `src/llm.md` for the plugin.
+14. **Document for the AI assistant.** Fill in `documentation.short` / `description` on nodes, `documentation` / `llm` on components, `src/llm.md` for the plugin, and a plugin guide (`guides`) for components that must be nested together.
 
 ## API cheat-sheet
 ```ts
@@ -57,13 +57,13 @@ import {
     makePlugin, makeLogicNode, LogicType, LogicUtil, type Static,
     EInjectionKey, EPluginHooks, ETokenType, ELogicScope, EElementType,
     type TComponent, type TToken, type TElementPanel, type TElementPanelProps, type TRouteGuard,
-    type TInterface, type TInterfaceEditorProps, type TTemplate, type THookParams, type TEnv,
+    type TInterface, type TInterfaceEditorProps, type TTemplate, type THookParams, type TEnv, type TPluginGuide,
     type TFileStore, type TFileDatabase, type TSchema
 } from "@luna-park/plugin";
 ```
 
 `makePlugin` keys:
-- **Identity:** `id`, `name`, `icon`, `description`, `color`, `llm`.
+- **Identity:** `id`, `name`, `icon`, `description`, `color`, `llm`, `guides`.
 - **Settings:** `config`, `internals`, `workspace`.
 - **Editor hooks:** `lifecycle.{mount,update,unmount}`, `hooks`, `windows`.
 - **Contributions:** `editor.{components,nodes,tokens,panel.element,inputs,interfaces,guards,templates,wrapper}`.
